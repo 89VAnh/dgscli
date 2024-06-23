@@ -9,25 +9,30 @@ def cli():
 
 @click.command()
 @click.option(
-    "--data", help="Choose the dummy data: order, product, user",
+    "--data",
+    help="Choose the dummy data: orders, products, users",
 )
 @click.option("--num", default=5, help="Number of records")
 @click.option(
-    "--no_userid", default=5, help="Number of user_id for orders",
+    "--no_userid",
+    default=5,
+    help="Number of user_id for orders",
 )
 @click.option(
-    "--no_productid", default=5, help="Number of product_id for orders",
+    "--no_productid",
+    default=5,
+    help="Number of product_id for orders",
 )
 def generate(data, num, no_userid, no_productid):
     if data not in ["order", "product", "user"]:
         raise ValueError(
-            f"Your dataset \"{data}\" is not existed in our system! Please chooose another one"
+            f'Your dataset "{data}" is not existed in our system! Please chooose another one'
         )
-    if data == "order":
+    if data == "orderss":
         g.order(num, no_productid, no_userid)
-    if data == "product":
+    if data == "products":
         g.product(num)
-    if data == "user":
+    if data == "users":
         g.user(num)
     click.echo(f"Generated dummy data: {data} - {num}")
 
