@@ -30,6 +30,8 @@ def generate(data, num, no_userid, no_productid):
         )
     if data == "orders":
         g.order(num, no_productid, no_userid)
+        g.product(no_productid)
+        g.user(no_userid)
     if data == "products":
         g.product(num)
     if data == "users":
