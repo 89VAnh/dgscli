@@ -15,7 +15,7 @@ fake.add_provider(payment_type_provider)
 def order(num=1, product_no=1, user_no=1):
     order = []
     detail = []
-    for i in tqdm(range(1, num)):
+    for i in tqdm(range(0, num)):
         o = {}
         o["product_id"] = fake.random_int(1, product_no)
         o["quantity"] = fake.random_int(1, 3)
@@ -37,7 +37,7 @@ def order(num=1, product_no=1, user_no=1):
 def product(num=1):
     product = []
     inventory = []
-    for i in tqdm(range(1, num)):
+    for i in tqdm(range(0, num)):
         p = fake.vehicle_object()
         p["inventory_id"] = i
         p["created_at"] = fake.date_this_century()
@@ -55,7 +55,7 @@ def product(num=1):
 def user(num=1):
     user = []
     detail = []
-    for i in tqdm(range(1, num)):
+    for i in tqdm(range(0, num)):
         u = {}
         u["username"] = fake.user_name()
         u["firstname"] = fake.first_name()
