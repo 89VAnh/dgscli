@@ -24,11 +24,11 @@ def cli():
     help="Number of product_id for orders",
 )
 def generate(data, num, no_userid, no_productid):
-    if data not in ["order", "product", "user"]:
+    if data not in ["orders", "products", "users"]:
         raise ValueError(
             f'Your dataset "{data}" is not existed in our system! Please chooose another one'
         )
-    if data == "orderss":
+    if data == "orders":
         g.order(num, no_productid, no_userid)
     if data == "products":
         g.product(num)
